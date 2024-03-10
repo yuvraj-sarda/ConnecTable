@@ -12,10 +12,10 @@ export default async function matchFound() {
     return (
         <main className="flex min-h-screen flex-col items-left justify-center px-10 py-16">
             <div className="">
-                <p className="text-xl text-center">
+                <a href="/"><p className="text-xl text-center">
                     <span className='text-red-700 font-bold'>Connec</span>
                     <span className="text-green-800 font-bold">Table</span>
-                </p>
+                </p></a>
                 
                 <p className="text-green-700 w-full text-center py-8 my-6 text-3xl font-bold">
                     We found a great match for you!
