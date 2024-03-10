@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema(
     {
-        firstName: {
+        eateryId: {
             type: String,
             required: true
         },
@@ -10,8 +10,29 @@ const userSchema = new Schema(
             type: [String],
             required: true
         },
+        okayOutsideInterests: {
+            type: Boolean,
+            required: true
+        },
+        conversationType: {
+            type: String,
+            required: true
+        },
+        firstName: {
+            type: String,
+            required: true
+        },
         location: {
-            type: String
+            type: String,
+            required: true
+        },
+        outfit: {
+            type: String,
+            required: true
+        },
+        active: {
+            type: Boolean,
+            required: true
         }
     }, 
     {

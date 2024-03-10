@@ -1,3 +1,5 @@
-export default function matchFound(userData: any) {
+import type { userData } from "../libs/types";
+
+export default function matchFound(userData: userData) {
     return true;
 }

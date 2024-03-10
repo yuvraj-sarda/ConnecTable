@@ -1,18 +1,4 @@
-const getUsers = async () => {
-    try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users`, {
-            cache: "no-store"
-        });
-
-        if (!res.ok) {
-            throw new Error("Failed to fetch users");
-        }
-
-        return res.json();
-    } catch (err: any) {
-        console.error("Error loading users", err);
-    }
-}
+import { getUsers } from "../api/users/route";
 
 export default async function matchFound() {
     const { users } = await getUsers();
@@ -21,7 +7,7 @@ export default async function matchFound() {
         <main className="flex min-h-screen flex-col items-left justify-between p-24">
             <div className="text-sm">
                 <p className="">
-                    Just some dummy text for now.
+                    
                 </p>
                 <p className="">
                     More dummy text.
