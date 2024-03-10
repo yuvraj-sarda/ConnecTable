@@ -9,7 +9,7 @@ export default function Home() {
           <span className="text-green-800 font-bold">Table</span>!
         </p>
         
-        <p className="">
+        <p className="my-4 text-md">
           Don&apos;t eat alone. Find someone to eat with.
         </p>
       </div>
