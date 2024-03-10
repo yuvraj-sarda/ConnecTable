@@ -133,12 +133,14 @@ function ConversationType({ setScreen, userData, setUserData }: any) {
   };
   
   const handleSubmit = () => {
-    if (matchFound(userData)) {
-      router.push(`/match-found`);
-    } else {
-      // POST(userData);
-      router.push(`/pairing`);
-    }
+    getUsers().then( (users) => {
+      if (users.length > 0) {
+        router.push(`/match-found`);
+      } else {
+        // POST(userData);
+        router.push(`/pairing`);
+      }
+    })
   }
 
   return (
@@ -146,24 +148,26 @@ function ConversationType({ setScreen, userData, setUserData }: any) {
       <p className="font-bold text-xl">
         Finally, what kind of a conversation would you like to have today?
       </p>
-      <div>
-        <input type="radio" id="deep" value="snackable" onChange={handleChange}/>
-        <label className="px-2">An easy, light conversation (a snackable chat!)</label>
-      </div>
+      <form>
+        <div>
+          <input type="radio" id="deep" value="snackable" onChange={handleChange}/>
+          <label className="px-2">An easy, light conversation (a snackable chat!)</label>
+        </div>
 
-      <div>
-        <input type="radio" id="deep" value="main" onChange={handleChange}/>
-        <label className="px-2">Something fulfilling, engaging (main course!)</label>
-      </div>
+        <div>
+          <input type="radio" id="deep" value="main" onChange={handleChange}/>
+          <label className="px-2">Something fulfilling, engaging (main course!)</label>
+        </div>
 
-      <div>
-        <input type="radio" id="deep" value="dessert" onChange={handleChange}/>
-        <label className="px-2">Rich, indulding, complex (dessert!)</label>
-      </div>
-
-      <button onClick={handleSubmit} className="bg-green-700 text-white rounded p-2 w-full">
-        Find your match!
-      </button>
+        <div>
+          <input type="radio" id="deep" value="dessert" onChange={handleChange}/>
+          <label className="px-2">Rich, indulding, complex (dessert!)</label>
+        </div>
+      
+        <button onClick={handleSubmit} className="bg-green-700 text-white rounded p-2 w-full">
+          Find your match!
+        </button>
+      </form>
     </div>
   );
 }
