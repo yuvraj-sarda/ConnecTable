@@ -7,7 +7,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    // Adding stuff here will OVERRIDE the default theme for that particular key.
     extend: {
+      // Adding stuff here will ADD TO the default theme for that particular key.
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
