@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import matchFound from '../../algorithms/findMatch';
 import { useRouter } from 'next/navigation';
 import { POST } from '../../api/users/route';
 import { userData } from '../../libs/types';
@@ -134,17 +133,19 @@ function ConversationType({ setScreen, userData, setUserData }: any) {
   
   const handleSubmit = () => {
     getUsers().then( (users) => {
+      console.log("Reached the then!)")
+      
       if (users.length > 0) {
         router.push(`/match-found`);
       } else {
         // POST(userData);
         router.push(`/pairing`);
       }
-    })
+    });
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-4">
       <p className="font-bold text-xl">
         Finally, what kind of a conversation would you like to have today?
       </p>
@@ -163,11 +164,11 @@ function ConversationType({ setScreen, userData, setUserData }: any) {
           <input type="radio" id="deep" value="dessert" onChange={handleChange}/>
           <label className="px-2">Rich, indulding, complex (dessert!)</label>
         </div>
-      
-        <button onClick={handleSubmit} className="bg-green-700 text-white rounded p-2 w-full">
-          Find your match!
-        </button>
+    
       </form>
+      <a href="/match-found" className="bg-green-700 text-white rounded m-5 p-2 w-full">
+          Find your match!
+      </a>
     </div>
   );
 }
