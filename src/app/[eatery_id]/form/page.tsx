@@ -4,7 +4,7 @@ import matchFound from '../../algorithms/findMatch';
 import { useRouter } from 'next/navigation';
 import { POST } from '../../api/users/route';
 import { userData } from '../../libs/types';
-import { getUsers } from '../../api/users/route';
+import { getUsers } from '../../libs/getUsers';
 
 export default function Form() {
   const [screen, setScreen] = useState(0);

@@ -1,4 +1,4 @@
-import { getUsers } from "../api/users/route";
+import { getUsers } from "../libs/getUsers";
 
 export default async function matchFound() {
     const { users } = await getUsers();
